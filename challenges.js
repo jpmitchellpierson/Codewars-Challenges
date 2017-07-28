@@ -13,7 +13,7 @@ function averageString(str) {
   
   //arr = ['zero', 'ten', 'five', 'two']
   for(let i = 0; i < arr.length; i++) {
-    if (str === '' || strToNum[arr[i]] > 9) return 'n/a';
+    if (str === '' || !strToNum.hasOwnProperty(arr[i])) return 'n/a';
     if (strToNum.hasOwnProperty(arr[i])) {
       sum += strToNum[arr[i]];
     }
