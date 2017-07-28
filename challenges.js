@@ -1,3 +1,4 @@
+// *** Deep Count 6 KYU *** //
 // Array.length will give you the number of top-level elements in an array.
 // Your task is to create a function deepCount that 
 // returns the number of ALL elements within an array, 
