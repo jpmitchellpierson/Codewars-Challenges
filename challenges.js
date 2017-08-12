@@ -1,4 +1,4 @@
-// *** TRIBONACCI SEQUENCE 6 KYU *** //
+// *** Tribonacci Sequence *** //
 // signature will be an array of 3 integers
 // create a fibonacci function that given a signature array/list, 
 // returns the first n elements - signature included of the so seeded sequence.
@@ -30,7 +30,7 @@ function tribonacci(signature,n){
 }
 
 
-// *** Deep Count 6 KYU *** //
+// *** Deep Count *** //
 // Array.length will give you the number of top-level elements in an array.
 // Your task is to create a function deepCount that 
 // returns the number of ALL elements within an array, 
@@ -58,7 +58,7 @@ function deepCount(a){
   return total;
 }
 
-
+// *** Highest Scoring Word *** //
 // Given a string of words (x), you need to find the highest scoring word.
 // Each letter of a word scores points according to it's position in the alphabet. 
 // a=1, z=26 and everything inbetween.
@@ -94,7 +94,7 @@ function findSum(str) {
   return sum;
 }
 
-// *** String Average 6 KYU *** //
+// *** String Average *** //
 // You are given a string of numbers between 0-9. 
 // Find the average of these numbers and return it as 
 // a floored whole number (ie: no decimal places) written out as a string. Eg:
@@ -119,7 +119,7 @@ function averageString(str) {
   return numToStr[avg];
 }
 
-// *** ROTATE ARRAY 6 KYU *** //
+// *** Rotate Array *** //
 // Create a function named "rotate" that takes an array and 
 // returns a new one with the elements inside rotated n spaces.
 
@@ -165,7 +165,7 @@ function rotate(array,n){
 }
 
 
-// *** IS A PRIME NUMBER? 6 KYU *** //
+// *** Is A Prime Number? *** //
 // Define a function isPrime that takes one integer argument and 
 // returns true or false depending on if the integer is a prime.
 // Per Wikipedia, a prime number (or a prime) is 
@@ -181,7 +181,7 @@ function isPrime(num) {
 
 
 
-// *** DUPLICATE COUNT 6 KYU *** //
+// *** Duplicate Count *** //
 // Write a function that will return the count of 
 // distinct case-insensitive alphabetic characters and 
 // numeric digits that occur more than once in the input string. 
@@ -215,7 +215,7 @@ function duplicateCount(text){
 }
 
 
-// *** Multiples Of Three And Five 6 KYU *** //
+// *** Multiples Of Three And Five *** //
 // If we list all the natural numbers below 10 
 // that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
 // The sum of these multiples is 23.
@@ -233,7 +233,7 @@ function solution(num){
   return sum;
 }
 
-// *** Find The Unique Number 6 KYU *** //
+// *** Find The Unique Number *** //
 // There is an array with some numbers 
 // All numbers are equal except for one
 // findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
@@ -258,7 +258,7 @@ function findUniq(arr) {
 }
 
 
-// *** MinMinMax 7 KYU *** //
+// *** MinMinMax *** //
 // Given an unsorted array of integers, find the smallest number in the array, 
 // the largest number in the array, and the smallest number between 
 // the two array bounds that is not in the array.
@@ -295,18 +295,16 @@ function findMinAbs(arr, minAbs) {
 }
 
 
-// *** Band Name Generator 7 KYU *** //
+// *** Band Name Generator *** //
 // My friend wants a new band name for her band. 
 // She like bands that use the formula: 'The' + a noun with first letter capitalized.
 // dolphin -> The Dolphin
-
 // However, when a noun STARTS and ENDS with the same letter, 
 // she likes to repeat the noun twice and connect them together 
 // with the first and last letter, 
 //combined into one word like so (WITHOUT a 'The' in front):
 // alaska -> Alaskalaska
 // europe -> Europeurope
-
 // Write a function that takes in a noun as a string, 
 // and returns her preferred band name written as a string
 function bandNameGenerator(str) {
@@ -314,7 +312,7 @@ function bandNameGenerator(str) {
   return str[0] === str[str.length - 1] ? s + str.slice(1) : 'The ' + s;
 }
 
-// *** Odd Or Even 7 KYU *** //
+// *** Odd Or Even *** //
 // Given an array of numbers, determine whether the sum of all of the numbers is odd or even.
 // Give your answer in string format as 'odd' or 'even'.
 // If the input array is empty consider it as: [0] (array with a zero).
@@ -325,7 +323,7 @@ function oddOrEven(array) {
   return array.reduce((a,b)=>a+b,0) % 2 ? 'odd' : 'even';
 }
 
-// *** Fold Your Way To The Moon 7 KYU *** //
+// *** Fold Your Way To The Moon *** //
 // You know that a piece of paper has a thickness of 0.0001m 
 // Given distance in units of meters, 
 // calculate how many times you have to fold the paper 
@@ -342,7 +340,7 @@ function foldTo(distance) {
   return folds;
 }
 
-// *** Reverse A Number 7 KYU *** //
+// *** Reverse A Number *** //
 // Given a number, write a function to output its reverse digits. 
 // (e.g. given 123 the answer is 321)
 // Numbers should preserve their sign 
@@ -356,4 +354,27 @@ function reverseNumber(n) {
     res = Number(n.toString().split('').reverse().join(''));
   }
   return res;
+}
+
+
+// *** Bartender, Drinks! *** //
+// Write a function getDrinkByProfession that receives as input 
+// a string, and produces outputs according to the following table:
+// Input	Output
+// "Jabroni"	--> "Patron Tequila"
+// "School Counselor"	--> "Anything with Alcohol"
+// "Programmer"	--> "Hipster Craft Beer"
+// "Bike Gang Member"	--> "Moonshine"
+// "Politician"	--> "Your tax dollars"
+// "Rapper"	--> "Cristal"
+// anything else	--> "Beer"
+// Note: anything else is the default case: if the input to the function 
+//is not any of the values in the table, then the return value should be "Beer."
+// Make sure you cover the cases where certain words do not show up 
+// with correct capitalization. For example, 
+// getDrinkByProfession("pOLitiCIaN") should still return "Your tax dollars".
+function getDrinkByProfession(profession){
+  let x = profession.toLowerCase();
+  let obj = {"jabroni":"Patron Tequila","school counselor":"Anything with Alcohol","programmer":"Hipster Craft Beer","bike gang member":	"Moonshine","politician":"Your tax dollars","rapper":	"Cristal"}
+  return !obj[x] ? "Beer" : obj[x];
 }
