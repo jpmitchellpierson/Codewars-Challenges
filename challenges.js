@@ -1,3 +1,43 @@
+// *** Rotate Array *** //
+// Create a function named "rotate" that takes an array and 
+// returns a new one with the elements inside rotated n spaces.
+// If n is greater than 0 it should rotate the array to the right. 
+// If n is less than 0 it should rotate the array to the left. 
+// If n is 0, then it should return the array unchanged.
+// Example:
+// var data = [1, 2, 3, 4, 5];
+// rotate(data, 1) // => [5, 1, 2, 3, 4]
+// rotate(data, 2) // => [4, 5, 1, 2, 3]
+// rotate(data, 3) // => [3, 4, 5, 1, 2]
+// rotate(data, 4) // => [2, 3, 4, 5, 1]
+// rotate(data, 5) // => [1, 2, 3, 4, 5]
+// rotate(data, 0) // => [1, 2, 3, 4, 5]
+// rotate(data, -1) // => [2, 3, 4, 5, 1]
+// rotate(data, -2) // => [3, 4, 5, 1, 2]
+// rotate(data, -3) // => [4, 5, 1, 2, 3]
+// rotate(data, -4) // => [5, 1, 2, 3, 4]
+// rotate(data, -5) // => [1, 2, 3, 4, 5]
+function rotate(array,n){
+  let arr = []
+  let temp;
+  let i = 0;
+  if (n === 0) return array;
+  
+  array.map(e => arr.push(e));
+  
+  for (let i = 0; i < n; i++) {
+    temp = arr.pop();
+    arr.unshift(temp);
+  }
+  
+  for (let j = 0; j > n; j--) {
+    temp = arr.shift();
+    arr.push(temp);
+  }
+  
+  return arr;
+}
+
 // *** Tribonacci Sequence *** //
 // signature will be an array of 3 integers
 // create a fibonacci function that given a signature array/list, 
@@ -28,7 +68,6 @@ function tribonacci(signature,n){
   add(signature, n);
   return signature;
 }
-
 
 // *** Deep Count *** //
 // Array.length will give you the number of top-level elements in an array.
@@ -94,6 +133,28 @@ function findSum(str) {
   return sum;
 }
 
+// *** Pig Latin *** //
+// Move the first letter of each word to the end of it, 
+// then add 'ay' to the end of the word.
+function pigIt(str){
+  let a = str.split(' ');
+  let newStr = '';
+  
+  return a.reduce((acc, prev) => {
+    let pig = toPig(prev);
+    if (a.indexOf(prev) === a.length - 1) {
+      acc += pig;
+    } else {
+      acc += pig + ' ';
+    }
+    return acc;
+  }, '');
+}
+
+function toPig(str) {
+  return str.slice(1) + str[0] + 'ay';
+}
+
 // *** String Average *** //
 // You are given a string of numbers between 0-9. 
 // Find the average of these numbers and return it as 
@@ -119,50 +180,7 @@ function averageString(str) {
   return numToStr[avg];
 }
 
-// *** Rotate Array *** //
-// Create a function named "rotate" that takes an array and 
-// returns a new one with the elements inside rotated n spaces.
 
-// If n is greater than 0 it should rotate the array to the right. 
-// If n is less than 0 it should rotate the array to the left. 
-// If n is 0, then it should return the array unchanged.
-
-// Example:
-// var data = [1, 2, 3, 4, 5];
-
-// rotate(data, 1) // => [5, 1, 2, 3, 4]
-// rotate(data, 2) // => [4, 5, 1, 2, 3]
-// rotate(data, 3) // => [3, 4, 5, 1, 2]
-// rotate(data, 4) // => [2, 3, 4, 5, 1]
-// rotate(data, 5) // => [1, 2, 3, 4, 5]
-
-// rotate(data, 0) // => [1, 2, 3, 4, 5]
-
-// rotate(data, -1) // => [2, 3, 4, 5, 1]
-// rotate(data, -2) // => [3, 4, 5, 1, 2]
-// rotate(data, -3) // => [4, 5, 1, 2, 3]
-// rotate(data, -4) // => [5, 1, 2, 3, 4]
-// rotate(data, -5) // => [1, 2, 3, 4, 5]
-function rotate(array,n){
-  let arr = []
-  let temp;
-  let i = 0;
-  if (n === 0) return array;
-  
-  array.map(e => arr.push(e));
-  
-  for (let i = 0; i < n; i++) {
-    temp = arr.pop();
-    arr.unshift(temp);
-  }
-  
-  for (let j = 0; j > n; j--) {
-    temp = arr.shift();
-    arr.push(temp);
-  }
-  
-  return arr;
-}
 
 
 // *** Is A Prime Number? *** //
