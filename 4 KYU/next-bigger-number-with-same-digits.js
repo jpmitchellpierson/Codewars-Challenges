@@ -1,4 +1,5 @@
 // *** Next Bigger Number With Same Digits *** //
+// NOTE: Passes all tests but times out on CodeWars
 // You have to create a function that takes a positive integer number and returns the next bigger number formed by the same digits:
 // nextBigger(12)==21
 // nextBigger(513)==531
