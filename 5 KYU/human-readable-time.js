@@ -9,7 +9,7 @@ function humanReadable(seconds) {
   let hours = Math.floor(minutes / 60);
   let mins = Math.floor(minutes % 60);
   let secs = Math.floor(seconds % 60);
-  console.log(hours);
+
   if (hours < 10) {
     hours = '0' + hours;
   }
